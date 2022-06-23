@@ -11,8 +11,10 @@ import org.junit.Test;
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class TicketMachineTest
-{
+public class TicketMachineTest{
+
+    private TicketMachine ticketMa1;
+
     /**
      * Default constructor for test class TicketMachineTest
      */
@@ -23,6 +25,7 @@ public class TicketMachineTest
     @Before
     public void setUp()
     {
+        ticketMa1 = new TicketMachine(45);
     }
     
     @After
@@ -69,4 +72,20 @@ public class TicketMachineTest
         assertNotEquals(Integer.valueOf(9), testTicketMachine.getTicketNumber());
     }
     
+
+    @Test
+    public void testPrice()
+    {
+        TicketMachine ticketMa2 = new TicketMachine(80);
+        assertEquals("80", ticketMa2.getPrice());
+    }
+
+    @Test
+    public void testABC()
+    {
+        TicketMachine ticketMa1 = new TicketMachine(250);
+        assertEquals("250", ticketMa1.getPrice());
+    }
 }
+
+

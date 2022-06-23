@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kolling
  * @version 2008.03.30
  */
-public class TicketMachine
+class TicketMachine
 {
     // The price of a ticket from this machine.
     private Integer price;
@@ -19,6 +19,13 @@ public class TicketMachine
     private Integer total;
     // The number of tickets printed.
     private Integer ticketNumber;
+    
+    private static TicketMachine ticketABC = new TicketMachine(95);
+    public static void main(String[] args) {
+        ticketABC.insertMoney(20);
+        System.out.println(ticketABC.printTicket());
+        
+    }
 
     /**
      * Create a machine that issues tickets of the given price.
